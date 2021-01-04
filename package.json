@@ -1,7 +1,8 @@
 {
     "name": "@play-when-visible/react-spring",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "dist/rs-play-when-visible.js",
+    "types": "dist/rs-play-when-visible.d.ts",
     "repository": "https://github.com/play-when-visible/react-spring.git",
     "author": "Im-Stevemmmmm <estebangarcia2121@gmail.com>",
     "license": "MIT",
