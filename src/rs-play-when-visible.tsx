@@ -40,7 +40,6 @@ interface PlayWhenVisibleProps {
     /**
      * The props for the `VisibilitySensor` from `react-visibility-sensor`, excluding `partialVisibility` and `onChange`. Read more in the [react-visibility-sensor props documentation](https://github.com/joshwnj/react-visibility-sensor#props).
      */
-
     sensorOptions?: Omit<
         React.ComponentPropsWithoutRef<typeof VisibilitySensor>,
         "onChange" | "partialVisibility"
