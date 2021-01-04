@@ -9,17 +9,28 @@ import VisibilitySensor from "react-visibility-sensor";
 
 type AnimationVariant = object & React.CSSProperties & UseSpringBaseProps;
 
-interface SetupAnimationPropsArgs {
+interface PWVSpringAnimation {
+    /**
+     * Initial animation state.
+     */
     from: AnimationVariant;
+
+    /**
+     * End animation state.
+     */
     to: AnimationVariant;
+
+    /**
+     * Animation configuration.
+     */
     config?: SpringConfig;
 }
 
 interface PlayWhenVisibleProps {
     /**
-     *
+     * The spring animation that will be played when the component becomes visible in the viewport.
      */
-    animation: SetupAnimationPropsArgs;
+    animation: PWVSpringAnimation;
 
     /**
      * If true, the animation plays only once.
@@ -72,6 +83,9 @@ interface PlayWhenVisibleProps {
     }) => JSX.Element;
 }
 
+/**
+ * Plays a spring animation when the component becomes visible in the viewport.
+ */
 export const PWVSpring = ({
     animation,
     onStart,
