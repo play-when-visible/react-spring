@@ -5,6 +5,10 @@
     "repository": "https://github.com/play-when-visible/react-spring.git",
     "author": "Im-Stevemmmmm <estebangarcia2121@gmail.com>",
     "license": "MIT",
+    "scripts": {
+        "build": "rollup --config",
+        "test": "jest"
+    },
     "dependencies": {
         "react-visibility-sensor": "^5.1.1"
     },
