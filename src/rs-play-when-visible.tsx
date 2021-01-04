@@ -1,14 +1,18 @@
 import React, { CSSProperties, useState } from "react";
-import { animated, useSpring, UseSpringBaseProps } from "react-spring";
+import {
+    animated,
+    SpringConfig,
+    useSpring,
+    UseSpringBaseProps,
+} from "react-spring";
 import VisibilitySensor from "react-visibility-sensor";
 
 type Inputs = object & React.CSSProperties & UseSpringBaseProps;
 
 interface SetupAnimationPropsArgs {
-    variants: {
-        from: Inputs;
-        to: Inputs;
-    };
+    from: Inputs;
+    to: Inputs;
+    config?: SpringConfig;
 }
 
 interface AnimationProps {
@@ -23,6 +27,7 @@ interface ChildrenArgs {
 }
 
 interface PlayWhenVisibleProps {
+    animation: SetupAnimationPropsArgs;
     /**
      * If true, the animation plays only once.
      */
@@ -45,10 +50,12 @@ interface PlayWhenVisibleProps {
     /**
      * The child function that creates the animation props.
      */
-    children: (args: ChildrenArgs) => JSX.Element;
+    // children: (args: ChildrenArgs) => JSX.Element;
+    children: React.ReactNode;
 }
 
 export const PlayWhenVisible = ({
+    animation,
     onVisiblityChange,
     onlyOnce,
     requireFullVisibility,
@@ -58,18 +65,16 @@ export const PlayWhenVisible = ({
     const [isVisible, setVisible] = useState(false);
     const [hasPlayed, setPlayed] = useState(false);
 
-    const setupAnimationProps = ({ variants }: SetupAnimationPropsArgs) => {
-        const { from, to } = variants;
+    const { from, to, config } = animation;
 
-        return {
-            style: isVisible
-                ? useSpring({
-                      from,
-                      to,
-                  })
-                : undefined,
-        };
-    };
+    const canPlay = onlyOnce ? hasPlayed : isVisible;
+    const fallbackVariant = onlyOnce ? (hasPlayed ? to : from) : from;
+
+    const finalAnimation = useSpring({
+        from: from,
+        to: canPlay ? to : fallbackVariant,
+        config,
+    });
 
     return (
         <VisibilitySensor
@@ -77,13 +82,13 @@ export const PlayWhenVisible = ({
             onChange={visible => {
                 if (onVisiblityChange) onVisiblityChange(visible);
 
-                setVisible(onlyOnce ? true : visible);
+                setVisible(visible);
 
                 if (visible && !hasPlayed) setPlayed(true);
             }}
             {...sensorOptions}
         >
-            {children({ setupAnimationProps })}
+            <animated.div style={finalAnimation}>{children}</animated.div>
         </VisibilitySensor>
     );
 };
