@@ -1,4 +1,5 @@
 import { AnimatedValue, SpringConfig, UseSpringBaseProps } from "react-spring";
+import { AnimationResult } from "./";
 import VisibilitySensor from "react-visibility-sensor";
 
 type AnimationVariant = object & React.CSSProperties & UseSpringBaseProps;
@@ -62,16 +63,5 @@ export interface PWVSpringProps {
     /**
      * The child function that creates the animation props.
      */
-    children: (result: {
-        animation: AnimatedValue<
-            Pick<
-                {
-                    from: unknown;
-                    to: unknown;
-                    config: unknown;
-                },
-                never
-            >
-        >;
-    }) => JSX.Element;
+    children: (result: { animation: AnimationResult }) => JSX.Element;
 }
