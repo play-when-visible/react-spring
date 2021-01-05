@@ -6,6 +6,6 @@ export type AnimationVariant = object &
     React.CSSProperties &
     UseSpringBaseProps;
 
-export type IntersectionObserverRef =
-    | ((node?: Element | null | undefined) => void)
-    | React.RefObject<unknown>;
+export type IntersectionObserverRef = (
+    node?: Element | null | undefined
+) => void;
