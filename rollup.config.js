@@ -12,5 +12,11 @@ export default {
         },
     ],
     plugins: [typescript()],
-    external: ["react", "react-dom", "react-visibility-sensor", "react-spring"],
+    external: [
+        "react",
+        "react-dom",
+        "react-visibility-sensor",
+        "react-intersection-observer",
+        "react-spring",
+    ],
 };
