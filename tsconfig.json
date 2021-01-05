@@ -10,6 +10,9 @@
         "forceConsistentCasingInFileNames": true,
         "allowJs": true,
         "outDir": "./dist",
-        "noImplicitAny": true
-    }
+        "noImplicitAny": true,
+        "declaration": true
+    },
+    "include": ["src/**/*.tsx"],
+    "exclude": ["src/**/*.spec.tsx"]
 }
