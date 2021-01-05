@@ -3,7 +3,9 @@ import { render } from "@testing-library/react";
 import { PWVSpring } from "./pwv-spring";
 import { animated } from "react-spring";
 
-describe("PlayWhenVisible", () => {
+jest.mock("react-intersection-observer", () => ({ children }) => children);
+
+describe("PWVSpring", () => {
     it("should render the content from the child function", () => {
         const { getByText } = render(
             <PWVSpring
