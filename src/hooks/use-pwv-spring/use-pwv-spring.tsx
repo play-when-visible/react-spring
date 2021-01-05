@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring } from "react-spring";
-import { AnimationResult, IntersectionObserverRef } from "../../types";
+import {
+    AnimationResult,
+    HookProps,
+    IntersectionObserverRef,
+} from "../../types/utility";
 import { PWVSpringProps } from "../../types/pwv-spring";
 
 /**
@@ -12,10 +16,7 @@ export const usePWVSpring = ({
     onStart,
     onRest,
     onlyOnce,
-}: Omit<PWVSpringProps, "children">): [
-    IntersectionObserverRef,
-    AnimationResult
-] => {
+}: HookProps<PWVSpringProps>): [IntersectionObserverRef, AnimationResult] => {
     const [ref, isVisible] = useInView();
     const [hasPlayed, setPlayed] = useState(false);
 
