@@ -21,7 +21,7 @@ export interface PWVSpringAnimation {
 
 export interface PWVSpringProps {
     /**
-     * The spring animation that will be played when the component becomes visible in the viewport.
+     * The animation to be played when the component becomes visible in the viewport. Accepts `from`, `to`, and `config`.
      */
     animation: PWVSpringAnimation;
 
@@ -31,7 +31,7 @@ export interface PWVSpringProps {
     onlyOnce?: boolean;
 
     /**
-     * The props for the `VisibilitySensor` from `react-visibility-sensor`, excluding `partialVisibility` and `onChange`. Read more in the [react-visibility-sensor props documentation](https://github.com/joshwnj/react-visibility-sensor#props).
+     * The sensor options for `react-intersection-observer`. Read more in the [react-intersection-observer documentation](https://github.com/thebuilder/react-intersection-observer#api).
      */
     sensorOptions?: Omit<IntersectionOptions, "triggerOnce" | "onChange">;
 
@@ -46,12 +46,14 @@ export interface PWVSpringProps {
     onRest?: (ds: Partial<unknown>) => void;
 
     /**
-     * Callback for when the visibility of the animation is changed. (Equivalent to `onChange` from the `VisibilitySensor` props)
+     * Callback for when the animation becomes visible or invisible in the viewport.
      */
     onVisiblityChange?: (visible: boolean) => void;
 
     /**
-     * The child function that creates the animation props.
+     * The child function that accepts an object containing the animation props.
+     *
+     * @example {({ animation }) => <animated.div style={animation}>Hello!</animated.div>}
      */
     children: (result: { animation: AnimationResult }) => JSX.Element;
 }

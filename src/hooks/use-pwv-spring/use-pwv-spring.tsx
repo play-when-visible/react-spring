@@ -4,6 +4,9 @@ import { useSpring } from "react-spring";
 import { AnimationResult, IntersectionObserverRef } from "../../types";
 import { PWVSpringProps } from "../../types/pwv-spring";
 
+/**
+ * Plays a spring animation when the component becomes visible in the viewport.
+ */
 export const usePWVSpring = ({
     animation,
     onStart,
