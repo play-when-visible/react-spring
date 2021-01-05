@@ -36,17 +36,11 @@ describe("usePWVSpring", () => {
         );
     };
 
-    it("should watch the the component", () => {
+    it("should loads the children", () => {
         const { getByText } = render(<TestComponent />);
 
         mockAllIsIntersecting(true);
 
         expect(getByText(/test text/i)).toBeInTheDocument;
     });
-
-    // it("should only play once", () => {
-    //     const { getByText } = render(<TestComponent />);
-
-    //     expect(getByText("Test Text")).toBeInTheDocument;
-    // });
 });
