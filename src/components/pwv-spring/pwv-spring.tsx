@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import InView from "react-intersection-observer";
 import { useSpring } from "react-spring";
-import VisibilitySensor from "react-visibility-sensor";
 import { PWVSpringProps } from "../../types/pwv-spring";
 
 /**
@@ -12,7 +12,6 @@ export const PWVSpring = ({
     onRest,
     onVisiblityChange,
     onlyOnce,
-    requireFullVisibility,
     sensorOptions,
     children,
 }: PWVSpringProps) => {
@@ -33,18 +32,17 @@ export const PWVSpring = ({
     });
 
     return (
-        <VisibilitySensor
-            partialVisibility={!requireFullVisibility}
-            onChange={visible => {
-                if (onVisiblityChange) onVisiblityChange(visible);
+        <InView
+            onChange={inView => {
+                setVisible(inView);
 
-                setVisible(visible);
+                if (onVisiblityChange) onVisiblityChange(inView);
 
-                if (visible && !hasPlayed) setPlayed(true);
+                if (isVisible && !hasPlayed) setPlayed(true);
             }}
             {...sensorOptions}
         >
             {children({ animation: spring })}
-        </VisibilitySensor>
+        </InView>
     );
 };
