@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { animated, useSpring } from "react-spring";
-import { AnimationResult } from "../../types";
+import { useSpring } from "react-spring";
+import { AnimationResult, IntersectionObserverRef } from "../../types";
 import { PWVSpringProps } from "../../types/pwv-spring";
 
 export const usePWVSpring = ({
@@ -9,8 +9,8 @@ export const usePWVSpring = ({
     onStart,
     onRest,
     onlyOnce,
-}: Pick<PWVSpringProps, "animation" | "onlyOnce" | "onStart" | "onRest">): [
-    (node?: Element | null | undefined) => void,
+}: Omit<PWVSpringProps, "children">): [
+    IntersectionObserverRef,
     AnimationResult
 ] => {
     const [ref, isVisible] = useInView();
