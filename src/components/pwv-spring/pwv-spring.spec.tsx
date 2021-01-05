@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { PWVSpring } from "./rs-play-when-visible";
+import { PWVSpring } from "./pwv-spring";
 import { animated } from "react-spring";
 
 describe("PlayWhenVisible", () => {
