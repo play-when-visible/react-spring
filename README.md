@@ -105,7 +105,7 @@ const Page = () => {
 _This table applies to both the Hooks API and the Render Props API._
 
 | Prop               | Default Value | Required | Description                                                                                                                                                                        |
-|--------------------|---------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------ | ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | animation          | undefined     | true     | The animation to be played when the component becomes visible in the viewport. Accepts `from`, `to`, and `config`.                                                                 |
 | onlyOnce           | false         | false    | If true, the animation plays only once.                                                                                                                                            |
 | sensorOptions      | undefined     | false    | The sensor options for `react-intersection-observer`. Read more in the [react-intersection-observer documentation](https://github.com/thebuilder/react-intersection-observer#api). |
