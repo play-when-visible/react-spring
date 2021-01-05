@@ -11,10 +11,6 @@ export default {
             strict: false,
         },
     ],
-    plugins: [
-        typescript({
-            tsconfig: "tsconfig.rollup.json",
-        }),
-    ],
+    plugins: [typescript()],
     external: ["react", "react-dom", "react-visibility-sensor", "react-spring"],
 };
