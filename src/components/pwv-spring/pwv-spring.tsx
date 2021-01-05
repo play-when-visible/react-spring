@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSpring } from "react-spring";
 import VisibilitySensor from "react-visibility-sensor";
-import { PlayWhenVisibleProps } from "../../types/pwv-spring";
+import { PWVSpringProps } from "../../types/pwv-spring";
 
 /**
  * Plays a spring animation when the component becomes visible in the viewport.
@@ -15,7 +15,7 @@ export const PWVSpring = ({
     requireFullVisibility,
     sensorOptions,
     children,
-}: PlayWhenVisibleProps) => {
+}: PWVSpringProps) => {
     const [isVisible, setVisible] = useState(false);
     const [hasPlayed, setPlayed] = useState(false);
 

@@ -20,7 +20,7 @@ export interface PWVSpringAnimation {
     config?: SpringConfig;
 }
 
-export interface PlayWhenVisibleProps {
+export interface PWVSpringProps {
     /**
      * The spring animation that will be played when the component becomes visible in the viewport.
      */
