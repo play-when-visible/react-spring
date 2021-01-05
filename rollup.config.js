@@ -15,8 +15,7 @@ export default {
     external: [
         "react",
         "react-dom",
-        "react-visibility-sensor",
-        "react-intersection-observer",
         "react-spring",
+        "react-intersection-observer",
     ],
 };
