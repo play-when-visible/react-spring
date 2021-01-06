@@ -6,6 +6,9 @@
     "repository": "https://github.com/play-when-visible/react-spring.git",
     "author": "Im-Stevemmmmm <estebangarcia2121@gmail.com>",
     "license": "MIT",
+    "keywords": [
+        "react spring", "react"
+    ],
     "scripts": {
         "build": "rollup --config",
         "test": "jest"
