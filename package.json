@@ -1,13 +1,14 @@
 {
     "name": "@play-when-visible/react-spring",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "repository": "https://github.com/play-when-visible/react-spring.git",
     "author": "Im-Stevemmmmm <estebangarcia2121@gmail.com>",
     "license": "MIT",
     "keywords": [
-        "react spring", "react"
+        "react spring",
+        "react"
     ],
     "scripts": {
         "build": "rollup --config",
