@@ -36,7 +36,7 @@ describe("usePWVSpring", () => {
         );
     };
 
-    it("should loads the children", () => {
+    it("should load the children", () => {
         const { getByText } = render(<TestComponent />);
 
         mockAllIsIntersecting(true);
