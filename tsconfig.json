@@ -13,6 +13,6 @@
         "noImplicitAny": true,
         "declaration": true
     },
-    "include": ["src/**/*.tsx"],
-    "exclude": ["src/**/*.spec.tsx"]
+    "include": ["src/**/*.tsx", "src/**/*.ts"],
+    "exclude": ["src/**/*.spec.tsx", "src/**/*.ts"]
 }
