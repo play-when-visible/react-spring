@@ -40,7 +40,7 @@ export const PWVSpring = ({
 
                 if (onVisiblityChange) onVisiblityChange(inView);
 
-                if (isVisible && !hasPlayed) setPlayed(true);
+                if (inView && !hasPlayed) setPlayed(true);
             }}
             {...sensorOptions}
         >
