@@ -44,7 +44,7 @@ export interface PWVAnimationProps<P = {}> {
     /**
      * The primitive tag to wrap the animation around.
      */
-    as: Primitive;
+    as?: Primitive;
 
     /**
      * The child function that accepts an object containing the animation props.
