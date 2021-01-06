@@ -19,5 +19,5 @@ export type AllowedIntersectionOptions = Omit<
 
 export type HookProps<T extends PWVAnimationProps<unknown>> = Omit<
     T,
-    "children"
+    "children" | "as"
 >;

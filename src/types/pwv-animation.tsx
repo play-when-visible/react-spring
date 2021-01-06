@@ -1,4 +1,5 @@
 import { SpringConfig } from "react-spring";
+import { Primitive } from "../utils/primitives";
 import {
     AllowedIntersectionOptions,
     AnimationResult,
@@ -39,6 +40,11 @@ export interface PWVAnimationProps<P = {}> {
      * Callback for when the animation becomes visible or invisible in the viewport.
      */
     onVisiblityChange?: (visible: boolean) => void;
+
+    /**
+     * The primitive tag to wrap the animation around.
+     */
+    as: Primitive;
 
     /**
      * The child function that accepts an object containing the animation props.

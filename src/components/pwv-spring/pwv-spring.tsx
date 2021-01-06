@@ -13,6 +13,7 @@ export const PWVSpring = ({
     onVisiblityChange,
     onlyOnce,
     sensorOptions,
+    as,
     children,
 }: PWVSpringProps) => {
     const [isVisible, setVisible] = useState(false);
@@ -33,6 +34,7 @@ export const PWVSpring = ({
 
     return (
         <InView
+            as={as}
             onChange={inView => {
                 setVisible(inView);
 
