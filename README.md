@@ -113,4 +113,9 @@ _This table applies to both the Hooks API and the Render Props API._
 | onRest             | undefined     | false    | Callback for when the animation stops playing.                                                                                                                                     |
 | onVisibilityChange | undefined     | false    | Callback for when the animation becomes visible or invisible in the viewport.                                                                                                      |
 
-**_The Render Props API requires a child function..._** `{( animation }) => (...your jsx here)}`.
+### Render Props API Only
+
+| Prop     | Default Value | Required | Description                                                 |
+| -------- | ------------- | -------- | ----------------------------------------------------------- |
+| as       | div           | false    | The primitive tag to wrap the animation around.             |
+| children | undefined     | true     | The child function `{( animation }) => (...your jsx here)}` |
