@@ -15,12 +15,16 @@ export const usePWVSpring = ({
     animation,
     onStart,
     onRest,
+    onVisiblityChange,
+    sensorOptions,
     onlyOnce,
 }: HookProps<PWVSpringProps>): [IntersectionObserverRef, AnimationResult] => {
-    const [ref, isVisible] = useInView();
+    const [ref, isVisible] = useInView(sensorOptions);
     const [hasPlayed, setPlayed] = useState(false);
 
     if (isVisible && !hasPlayed) setPlayed(true);
+
+    if (onVisiblityChange) onVisiblityChange(isVisible);
 
     const { from, to, config } = animation;
 
