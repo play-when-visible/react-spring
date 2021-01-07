@@ -60,12 +60,14 @@ const Page = () => {
     });
 
     return (
-        <animated.div ref={ref} style={animation}>
-            Hello World!
-        </animated.div>
+        <div ref={ref}>
+            <animated.h1 style={animation}>Hello World!</animated.h1>
+        </div>
     );
 };
 ```
+
+**_WARNING! It is VERY important that you do not put the ref directly on an animated tag or multiple hooks will NOT WORK!_**
 
 ### Render Props API
 
@@ -101,6 +103,8 @@ const Page = () => {
 ```
 
 ## API
+
+**_WARNING! It is VERY important that you do not put the ref directly on an animated tag or multiple hooks will NOT WORK!_**
 
 _This table applies to both the Hooks API and the Render Props API._
 
