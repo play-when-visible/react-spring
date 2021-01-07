@@ -32,7 +32,7 @@ export const usePWVSpring = ({
     const fallbackVariant = onlyOnce ? (hasPlayed ? to : from) : from;
 
     const spring = useSpring({
-        from: from,
+        from,
         to: canPlay ? to : fallbackVariant,
         config,
         onStart,
